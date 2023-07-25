@@ -37,6 +37,9 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
 
 void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
 {
+        auto* device = deviceManager.getCurrentAudioDevice();
+        auto activeInputChannels  = device->getActiveInputChannels();
+        auto maxInputChannels  = activeInputChannels .getHighestBit() + 1;
 
     for(int i = 0; i < 2; i++)
         inputs[i] = new double[bufferToFill.numSamples];
@@ -48,6 +51,25 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
     
     for (auto chan = 0; chan < bufferToFill.buffer->getNumChannels(); ++chan)
     {
+        auto actualInputChannel = chan % maxInputChannels; // [1]
+        
+        if (! activeInputChannels[chan]) // [2]
+                {
+                    bufferToFill.buffer->clear (chan, bufferToFill.startSample, bufferToFill.numSamples);
+                }
+        else
+                {
+                    auto* channelDataInput = bufferToFill.buffer->getReadPointer (actualInputChannel, bufferToFill.startSample);
+
+                    for (auto i = 0; i < bufferToFill.numSamples ; ++i)
+                    {
+                    // inputs[chan][i] =(random.nextFloat()*2.0f - 1.0f) * 0.1f; // can I replace this line by the following ?
+                    inputs[chan][i] = channelDataInput[i];
+
+                    }
+                    
+                }
+
         auto* channelDataInput = bufferToFill.buffer->getReadPointer (chan, bufferToFill.startSample);
 
         for (auto i = 0; i < bufferToFill.numSamples ; ++i)
@@ -68,7 +90,6 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
 
         for (auto i = 0; i < bufferToFill.numSamples ; ++i)
         {
-            // channelData[i] = inputs[0][i] * 10.0f;
             channelData[i] = outputs[chan][i];
         }
     }

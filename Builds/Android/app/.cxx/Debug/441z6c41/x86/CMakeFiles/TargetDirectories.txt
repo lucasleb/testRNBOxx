@@ -1,0 +1,15 @@
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/CMakeFiles/install/local.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/CMakeFiles/list_install_components.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/CMakeFiles/rebuild_cache.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/CMakeFiles/edit_cache.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/CMakeFiles/juce_jni.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/CMakeFiles/install/strip.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/CMakeFiles/install.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/CMakeFiles/cpufeatures.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/oboe/CMakeFiles/install/local.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/oboe/CMakeFiles/install/strip.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/oboe/CMakeFiles/install.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/oboe/CMakeFiles/list_install_components.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/oboe/CMakeFiles/rebuild_cache.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/oboe/CMakeFiles/edit_cache.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/x86/oboe/CMakeFiles/oboe.dir

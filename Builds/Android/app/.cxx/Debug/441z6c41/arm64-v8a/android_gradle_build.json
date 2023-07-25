@@ -1,0 +1,53 @@
+{
+  "buildFiles": [
+    "/Applications/JUCE/modules/juce_audio_devices/native/oboe/CMakeLists.txt",
+    "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/lucaslebrun/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/lucaslebrun/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "cpufeatures::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "cpufeatures",
+      "output": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/libcpufeatures.a"
+    },
+    "juce_jni::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "juce_jni",
+      "output": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a/libjuce_jni.so",
+      "runtimeFiles": []
+    },
+    "oboe::@0db0cf03f2959f768628": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "oboe",
+      "output": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/oboe/liboboe.a"
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

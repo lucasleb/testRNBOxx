@@ -1,0 +1,15 @@
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/CMakeFiles/install/local.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/CMakeFiles/list_install_components.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/CMakeFiles/juce_jni.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/CMakeFiles/install/strip.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/CMakeFiles/install.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/CMakeFiles/cpufeatures.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/oboe/CMakeFiles/install/local.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/oboe/CMakeFiles/install/strip.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/oboe/CMakeFiles/install.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/oboe/CMakeFiles/list_install_components.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/oboe/CMakeFiles/rebuild_cache.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/oboe/CMakeFiles/edit_cache.dir
+/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a/oboe/CMakeFiles/oboe.dir

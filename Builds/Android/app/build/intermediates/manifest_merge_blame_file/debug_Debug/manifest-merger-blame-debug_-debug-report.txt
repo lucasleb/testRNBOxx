@@ -1,0 +1,94 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.yourcompany.testrnboxx"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+10
+11    <supports-screens
+11-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:3-5:51
+12        android:anyDensity="true"
+12-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:106-131
+13        android:largeScreens="true"
+13-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:78-105
+14        android:normalScreens="true"
+14-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:49-77
+15        android:smallScreens="true"
+15-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:21-48
+16        android:xlargeScreens="true" />
+16-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:5:21-49
+17
+18    <uses-permission
+18-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:6:3-105
+19        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+19-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:6:20-76
+20        android:maxSdkVersion="28" />
+20-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:6:77-103
+21    <uses-permission
+21-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:7:3-104
+22        android:name="android.permission.READ_EXTERNAL_STORAGE"
+22-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:7:20-75
+23        android:maxSdkVersion="32" />
+23-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:7:76-102
+24    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+24-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:8:3-72
+24-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:8:20-70
+25    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+25-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:9:3-73
+25-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:9:20-71
+26    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+26-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:10:3-72
+26-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:10:20-70
+27    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+27-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:11:3-68
+27-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:11:20-66
+28    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+28-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:12:3-83
+28-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:12:20-81
+29    <uses-permission android:name="android.permission.INTERNET" />
+29-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:13:3-64
+29-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:13:20-62
+30
+31    <application
+31-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:14:3-23:17
+32        android:name="com.rmsl.juce.JuceApp"
+32-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:14:49-85
+33        android:debuggable="true"
+34        android:hardwareAccelerated="false"
+34-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:14:86-121
+35        android:label="@string/app_name"
+35-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:14:16-48
+36        android:testOnly="true" >
+37        <activity
+37-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:15:5-22:16
+38            android:name="com.rmsl.juce.JuceActivity"
+38-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:15:15-56
+39            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|navigation"
+39-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:15:57-138
+40            android:exported="true"
+40-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:17:15-38
+41            android:hardwareAccelerated="true"
+41-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:16:87-121
+42            android:launchMode="singleTask"
+42-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:16:55-86
+43            android:screenOrientation="unspecified" >
+43-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:16:15-54
+44            <intent-filter>
+44-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:18:7-21:23
+45                <action android:name="android.intent.action.MAIN" />
+45-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:19:9-60
+45-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:19:17-58
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:20:9-68
+47-->/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:20:19-66
+48            </intent-filter>
+49        </activity>
+50    </application>
+51
+52</manifest>

@@ -22,12 +22,22 @@ MainComponent::MainComponent()
     volumeSlider.setRange (-70, 0);
     volumeSlider.addListener (this);
     volumeSlider.setTextBoxStyle(juce::Slider::NoTextBox, false, 90, 0);
+    
+    playStopButton.setButtonText("Play"); // Initial text
+    playStopButton.onClick = [this] {
+        if (playStopButton.getButtonText() == "Play") {
+            playStopButton.setButtonText("Stop");
+            rnboObject.sendMessage(RNBO::TAG("state"), 1, RNBO::TAG("")); // Signal to start playing
+        } else {
+            playStopButton.setButtonText("Play");
+            rnboObject.sendMessage(RNBO::TAG("state"), 0, RNBO::TAG("")); // Signal to stop playing
+        }
+    };
+    addAndMakeVisible(playStopButton);
+    
+   
 
-    
-    
-//    addAndMakeVisible (volumeLabel);
-//    volumeLabel.setText ("Volume", juce::dontSendNotification);
-//    volumeLabel.attachToComponent (&volumeSlider, true); // [4]
+
 }
 
 MainComponent::~MainComponent()
@@ -45,6 +55,9 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
 //        const char *id = rnboObject.getParameterId(i);
 //        const char *name = rnboObject.getParameterName(i);
 //    }
+    
+    int parameterIndex = rnboObject.getParameterIndexForID("volume");
+
 }
 
 void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
@@ -115,6 +128,6 @@ void MainComponent::paint (juce::Graphics& g)
 void MainComponent::resized() 
 {
     volumeSlider.setBounds (20, getHeight() - 60 - 60, getWidth() - 40, 60);
-
+    playStopButton.setBounds(getWidth()/4, getHeight()/3, getWidth()/2, getWidth()/4);
 }
 

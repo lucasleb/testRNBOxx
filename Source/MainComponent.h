@@ -4,8 +4,10 @@
 #include <RNBO.h>
 class MainComponent  : public juce::AudioAppComponent,
                        public juce::Slider::Listener
+                       
 {
 public:
+
     //==============================================================================
     MainComponent();
     ~MainComponent() override;
@@ -25,16 +27,10 @@ public:
     {
         if (slider == &volumeSlider)
         {
-            int parameterIndex = rnboObject.getParameterIndexForID("volume");
             rnboObject.setParameterValue(parameterIndex, volumeSlider.getValue());
         }
-            
-        
-        
-
-
-                    
     };
+    
 
 
 private:
@@ -44,6 +40,11 @@ private:
     RNBO::SampleValue** outputs = new RNBO::SampleValue*[2];
     
     juce::Slider volumeSlider;
+    juce::TextButton playStopButton;
+
+    
+    int parameterIndex;
+    
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

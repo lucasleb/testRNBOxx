@@ -37,8 +37,18 @@
   "numMidiOutputPorts": 0,
   "externalDataRefs": [],
   "patcherSerial": 0,
-  "inports": [],
-  "outports": [],
+  "inports": [
+    {
+      "tag": "state",
+      "meta": ""
+    }
+  ],
+  "outports": [
+    {
+      "tag": "time",
+      "meta": ""
+    }
+  ],
   "inlets": [
     {
       "type": "signal",

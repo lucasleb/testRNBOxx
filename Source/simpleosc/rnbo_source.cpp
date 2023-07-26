@@ -89,11 +89,10 @@ rnbomatic* getTopLevelPatcher() {
 
 void cancelClockEvents()
 {
-    getEngine()->flushClockEvents(this, 1935387534, false);
-    getEngine()->flushClockEvents(this, -1508480176, false);
-    getEngine()->flushClockEvents(this, 922084457, false);
+    getEngine()->flushClockEvents(this, -1245190316, false);
+    getEngine()->flushClockEvents(this, -1093754261, false);
     getEngine()->flushClockEvents(this, 1937376702, false);
-    getEngine()->flushClockEvents(this, -4141894, false);
+    getEngine()->flushClockEvents(this, 1172582456, false);
 }
 
 template <typename T> void listquicksort(T& arr, T& sortindices, Int l, Int h, bool ascending) {
@@ -387,11 +386,15 @@ void setState() {}
 void getPreset(PatcherStateInterface& preset) {
     preset["__presetid"] = "rnbo";
     this->param_01_getPresetValue(getSubState(preset, "volume"));
+    this->param_02_getPresetValue(getSubState(preset, "time"));
+    this->param_03_getPresetValue(getSubState(preset, "relativeTime"));
 }
 
 void setPreset(MillisecondTime time, PatcherStateInterface& preset) {
     this->updateTime(time);
     this->param_01_setPresetValue(getSubState(preset, "volume"));
+    this->param_02_setPresetValue(getSubState(preset, "time"));
+    this->param_03_setPresetValue(getSubState(preset, "relativeTime"));
 }
 
 void processTempoEvent(MillisecondTime time, Tempo tempo) {
@@ -404,17 +407,15 @@ void processTempoEvent(MillisecondTime time, Tempo tempo) {
 void processTransportEvent(MillisecondTime time, TransportState state) {
     this->updateTime(time);
 
-    if (this->globaltransport_setState(this->_currentTime, state, false)) {
-        this->metro_01_onTransportChanged(state);
-    }
+    if (this->globaltransport_setState(this->_currentTime, state, false))
+        {}
 }
 
 void processBeatTimeEvent(MillisecondTime time, BeatTime beattime) {
     this->updateTime(time);
 
-    if (this->globaltransport_setBeatTime(this->_currentTime, beattime, false)) {
-        this->metro_01_onBeatTimeChanged(beattime);
-    }
+    if (this->globaltransport_setBeatTime(this->_currentTime, beattime, false))
+        {}
 }
 
 void onSampleRateChanged(double ) {}
@@ -435,6 +436,16 @@ void setParameterValue(ParameterIndex index, ParameterValue v, MillisecondTime t
         this->param_01_value_set(v);
         break;
         }
+    case 1:
+        {
+        this->param_02_value_set(v);
+        break;
+        }
+    case 2:
+        {
+        this->param_03_value_set(v);
+        break;
+        }
     }
 }
 
@@ -452,6 +463,14 @@ ParameterValue getParameterValue(ParameterIndex index)  {
         {
         return this->param_01_value;
         }
+    case 1:
+        {
+        return this->param_02_value;
+        }
+    case 2:
+        {
+        return this->param_03_value;
+        }
     default:
         {
         return 0;
@@ -468,7 +487,7 @@ ParameterIndex getNumSignalOutParameters() const {
 }
 
 ParameterIndex getNumParameters() const {
-    return 1;
+    return 3;
 }
 
 ConstCharPointer getParameterName(ParameterIndex index) const {
@@ -476,6 +495,14 @@ ConstCharPointer getParameterName(ParameterIndex index) const {
     case 0:
         {
         return "volume";
+        }
+    case 1:
+        {
+        return "time";
+        }
+    case 2:
+        {
+        return "relativeTime";
         }
     default:
         {
@@ -489,6 +516,14 @@ ConstCharPointer getParameterId(ParameterIndex index) const {
     case 0:
         {
         return "volume";
+        }
+    case 1:
+        {
+        return "time";
+        }
+    case 2:
+        {
+        return "relativeTime";
         }
     default:
         {
@@ -506,6 +541,44 @@ void getParameterInfo(ParameterIndex index, ParameterInfo * info) const {
             info->initialValue = -70;
             info->min = -70;
             info->max = 0;
+            info->exponent = 1;
+            info->steps = 0;
+            info->debug = false;
+            info->saveable = true;
+            info->transmittable = true;
+            info->initialized = true;
+            info->visible = true;
+            info->displayName = "";
+            info->unit = "";
+            info->ioType = IOTypeUndefined;
+            info->signalIndex = INVALID_INDEX;
+            break;
+            }
+        case 1:
+            {
+            info->type = ParameterTypeNumber;
+            info->initialValue = 0;
+            info->min = 0;
+            info->max = 10000000000;
+            info->exponent = 1;
+            info->steps = 0;
+            info->debug = false;
+            info->saveable = true;
+            info->transmittable = true;
+            info->initialized = true;
+            info->visible = true;
+            info->displayName = "";
+            info->unit = "";
+            info->ioType = IOTypeUndefined;
+            info->signalIndex = INVALID_INDEX;
+            break;
+            }
+        case 2:
+            {
+            info->type = ParameterTypeNumber;
+            info->initialValue = 0;
+            info->min = 0;
+            info->max = 1;
             info->exponent = 1;
             info->steps = 0;
             info->debug = false;
@@ -543,6 +616,22 @@ ParameterValue applyStepsToNormalizedParameterValue(ParameterValue normalizedVal
 
 ParameterValue convertToNormalizedParameterValue(ParameterIndex index, ParameterValue value) const {
     switch (index) {
+    case 2:
+        {
+        {
+            value = (value < 0 ? 0 : (value > 1 ? 1 : value));
+            ParameterValue normalizedValue = (value - 0) / (1 - 0);
+            return normalizedValue;
+        }
+        }
+    case 1:
+        {
+        {
+            value = (value < 0 ? 0 : (value > 10000000000 ? 10000000000 : value));
+            ParameterValue normalizedValue = (value - 0) / (10000000000 - 0);
+            return normalizedValue;
+        }
+        }
     case 0:
         {
         {
@@ -562,6 +651,26 @@ ParameterValue convertFromNormalizedParameterValue(ParameterIndex index, Paramet
     value = (value < 0 ? 0 : (value > 1 ? 1 : value));
 
     switch (index) {
+    case 2:
+        {
+        {
+            value = (value < 0 ? 0 : (value > 1 ? 1 : value));
+
+            {
+                return 0 + value * (1 - 0);
+            }
+        }
+        }
+    case 1:
+        {
+        {
+            value = (value < 0 ? 0 : (value > 1 ? 1 : value));
+
+            {
+                return 0 + value * (10000000000 - 0);
+            }
+        }
+        }
     case 0:
         {
         {
@@ -584,6 +693,14 @@ ParameterValue constrainParameterValue(ParameterIndex index, ParameterValue valu
     case 0:
         {
         return this->param_01_value_constrain(value);
+        }
+    case 1:
+        {
+        return this->param_02_value_constrain(value);
+        }
+    case 2:
+        {
+        return this->param_03_value_constrain(value);
         }
     default:
         {
@@ -620,17 +737,12 @@ void processClockEvent(MillisecondTime time, ClockId index, bool hasValue, Param
     this->updateTime(time);
 
     switch (index) {
-    case 1935387534:
-        {
-        this->metro_01_tick_bang();
-        break;
-        }
-    case -1508480176:
+    case -1245190316:
         {
         this->snapshot_01_out_set(value);
         break;
         }
-    case 922084457:
+    case -1093754261:
         {
         this->delay_01_out_bang();
         break;
@@ -640,7 +752,7 @@ void processClockEvent(MillisecondTime time, ClockId index, bool hasValue, Param
         this->line_01_target_bang();
         break;
         }
-    case -4141894:
+    case 1172582456:
         {
         this->line_02_target_bang();
         break;
@@ -669,14 +781,17 @@ void processNumMessage(MessageTag tag, MessageTag objectId, MillisecondTime time
         if (TAG("toggle_obj-36") == objectId)
             this->toggle_01_valin_set(payload);
 
-        if (TAG("number_obj-80") == objectId)
+        if (TAG("number_obj-95") == objectId)
             this->numberobj_01_valin_set(payload);
 
-        if (TAG("toggle_obj-73") == objectId)
-            this->toggle_02_valin_set(payload);
+        if (TAG("number_obj-80") == objectId)
+            this->numberobj_02_valin_set(payload);
 
         if (TAG("number_obj-59") == objectId)
-            this->numberobj_02_valin_set(payload);
+            this->numberobj_03_valin_set(payload);
+
+        if (TAG("number_obj-104") == objectId)
+            this->numberobj_04_valin_set(payload);
 
         break;
         }
@@ -687,11 +802,17 @@ void processNumMessage(MessageTag tag, MessageTag objectId, MillisecondTime time
         }
     case TAG("format"):
         {
-        if (TAG("number_obj-80") == objectId)
+        if (TAG("number_obj-95") == objectId)
             this->numberobj_01_format_set(payload);
 
-        if (TAG("number_obj-59") == objectId)
+        if (TAG("number_obj-80") == objectId)
             this->numberobj_02_format_set(payload);
+
+        if (TAG("number_obj-59") == objectId)
+            this->numberobj_03_format_set(payload);
+
+        if (TAG("number_obj-104") == objectId)
+            this->numberobj_04_format_set(payload);
 
         break;
         }
@@ -776,25 +897,17 @@ MessageTagInfo resolveTag(MessageTag tag) const {
         {
         return "toggle_obj-36";
         }
-    case TAG("number_obj-80"):
+    case TAG("number_obj-95"):
         {
-        return "number_obj-80";
+        return "number_obj-95";
         }
     case TAG("setup"):
         {
         return "setup";
         }
-    case TAG("toggle_obj-73"):
+    case TAG("number_obj-80"):
         {
-        return "toggle_obj-73";
-        }
-    case TAG("time"):
-        {
-        return "time";
-        }
-    case TAG(""):
-        {
-        return "";
+        return "number_obj-80";
         }
     case TAG("number_obj-59"):
         {
@@ -807,6 +920,10 @@ MessageTagInfo resolveTag(MessageTag tag) const {
     case TAG("message_obj-53"):
         {
         return "message_obj-53";
+        }
+    case TAG("number_obj-104"):
+        {
+        return "number_obj-104";
         }
     case TAG("message_obj-65"):
         {
@@ -824,6 +941,10 @@ MessageTagInfo resolveTag(MessageTag tag) const {
         {
         return "state";
         }
+    case TAG(""):
+        {
+        return "";
+        }
     case TAG("format"):
         {
         return "format";
@@ -838,7 +959,7 @@ MessageTagInfo resolveTag(MessageTag tag) const {
 }
 
 MessageIndex getNumMessages() const {
-    return 2;
+    return 1;
 }
 
 const MessageInfo& getMessageInfo(MessageIndex index) const {
@@ -846,20 +967,11 @@ const MessageInfo& getMessageInfo(MessageIndex index) const {
     case 0:
         {
         static const MessageInfo r0 = {
-            "time",
-            Outport
-        };
-
-        return r0;
-        }
-    case 1:
-        {
-        static const MessageInfo r1 = {
             "state",
             Inport
         };
 
-        return r1;
+        return r0;
         }
     }
 
@@ -881,6 +993,28 @@ void param_01_value_set(number v) {
     {
         list converted = {v};
         this->line_01_segments_set(converted);
+    }
+}
+
+void param_02_value_set(number v) {
+    v = this->param_02_value_constrain(v);
+    this->param_02_value = v;
+    this->sendParameter(1, false);
+
+    if (this->param_02_value != this->param_02_lastValue) {
+        this->getEngine()->presetTouched();
+        this->param_02_lastValue = this->param_02_value;
+    }
+}
+
+void param_03_value_set(number v) {
+    v = this->param_03_value_constrain(v);
+    this->param_03_value = v;
+    this->sendParameter(2, false);
+
+    if (this->param_03_value != this->param_03_lastValue) {
+        this->getEngine()->presetTouched();
+        this->param_03_lastValue = this->param_03_value;
     }
 }
 
@@ -908,27 +1042,26 @@ void numberobj_01_format_set(number v) {
     this->numberobj_01_currentFormat = rnbo_trunc((v > 6 ? 6 : (v < 0 ? 0 : v)));
 }
 
-void toggle_02_valin_set(number v) {
-    this->toggle_02_value_number_set(v);
-}
-
-void metro_01_tick_bang() {
-    this->metro_01_tickout_bang();
-    this->getEngine()->flushClockEvents(this, 1935387534, false);;
-
-    if ((bool)(this->metro_01_on)) {
-        {
-            this->getEngine()->scheduleClockEvent(this, 1935387534, this->metro_01_interval + this->_currentTime);;
-        }
-    }
-}
-
 void numberobj_02_valin_set(number v) {
     this->numberobj_02_value_set(v);
 }
 
 void numberobj_02_format_set(number v) {
     this->numberobj_02_currentFormat = rnbo_trunc((v > 6 ? 6 : (v < 0 ? 0 : v)));
+}
+
+void snapshot_01_out_set(number v) {
+    this->snapshot_01_out = v;
+    this->numberobj_04_value_set(v);
+    this->expr_02_in1_set(v);
+}
+
+void numberobj_03_valin_set(number v) {
+    this->numberobj_03_value_set(v);
+}
+
+void numberobj_03_format_set(number v) {
+    this->numberobj_03_currentFormat = rnbo_trunc((v > 6 ? 6 : (v < 0 ? 0 : v)));
 }
 
 void delay_01_out_bang() {
@@ -951,6 +1084,14 @@ void message_01_listin_number_set(number v) {
 
 void message_01_listin_bang_bang() {
     this->message_01_input_bang();
+}
+
+void numberobj_04_valin_set(number v) {
+    this->numberobj_04_value_set(v);
+}
+
+void numberobj_04_format_set(number v) {
+    this->numberobj_04_currentFormat = rnbo_trunc((v > 6 ? 6 : (v < 0 ? 0 : v)));
 }
 
 void message_02_listin_list_set(const list& v) {
@@ -1039,10 +1180,13 @@ void allocateDataRefs() {
 
 void initializeObjects() {
     this->numberobj_01_init();
-    this->ip_01_init();
-    this->numberobj_02_init();
-    this->message_01_init();
     this->change_01_init();
+    this->numberobj_02_init();
+    this->ip_01_init();
+    this->numberobj_03_init();
+    this->message_01_init();
+    this->numberobj_04_init();
+    this->change_02_init();
     this->message_02_init();
     this->message_03_init();
 }
@@ -1054,11 +1198,16 @@ void sendOutlet(OutletIndex index, ParameterValue value) {
 void startup() {
     this->updateTime(this->getEngine()->getCurrentTime());
 
-    if ((bool)(this->metro_01_on))
-        this->metro_01_on_set(1);
-
     {
         this->scheduleParamInit(0, 0);
+    }
+
+    {
+        this->scheduleParamInit(1, 0);
+    }
+
+    {
+        this->scheduleParamInit(2, 0);
     }
 
     this->processParamInitEvents();
@@ -1125,6 +1274,16 @@ void line_01_segments_set(const list& v) {
     }
 }
 
+static number param_02_value_constrain(number v) {
+    v = (v > 10000000000 ? 10000000000 : (v < 0 ? 0 : v));
+    return v;
+}
+
+static number param_03_value_constrain(number v) {
+    v = (v > 1 ? 1 : (v < 0 ? 0 : v));
+    return v;
+}
+
 void message_01_set_set(const list& v) {
     {
         list __value = jsCreateListCopy(v);
@@ -1135,23 +1294,23 @@ void message_01_set_set(const list& v) {
 }
 
 void delay_01_stop_bang() {
-    this->getEngine()->flushClockEvents(this, 922084457, false);;
+    this->getEngine()->flushClockEvents(this, -1093754261, false);;
 }
 
 void delay_01_input_bang() {
     if ((bool)(!(bool)(this->delay_01_delayall)))
         this->delay_01_stop_bang();
 
-    this->getEngine()->scheduleClockEvent(this, 922084457, this->delay_01_time + this->_currentTime);;
+    this->getEngine()->scheduleClockEvent(this, -1093754261, this->delay_01_time + this->_currentTime);;
 }
 
 void select_01_match1_bang() {
     this->delay_01_input_bang();
 }
 
-void change_01_zero_set(number ) {}
+void change_02_zero_set(number ) {}
 
-void change_01_nonzero_set(number ) {}
+void change_02_nonzero_set(number ) {}
 
 void phasor_01_phase_set(number v) {
     if (v >= 0 && (bool)(this->phasor_01_sigbuf)) {
@@ -1159,12 +1318,12 @@ void phasor_01_phase_set(number v) {
     }
 }
 
-void outport_01_input_number_set(number v) {
-    this->getEngine()->sendNumMessage(TAG("time"), TAG(""), v, this->_currentTime);
-}
+void change_01_zero_set(number ) {}
+
+void change_01_nonzero_set(number ) {}
 
 void numberobj_01_output_set(number v) {
-    this->outport_01_input_number_set(v);
+    this->param_02_value_set(v);
 }
 
 void numberobj_01_value_set(number v) {
@@ -1176,13 +1335,56 @@ void numberobj_01_value_set(number v) {
         localvalue = rnbo_trunc(localvalue);
     }
 
-    this->getEngine()->sendNumMessage(TAG("valout"), TAG("number_obj-80"), localvalue, this->_currentTime);
+    this->getEngine()->sendNumMessage(TAG("valout"), TAG("number_obj-95"), localvalue, this->_currentTime);
     this->numberobj_01_output_set(localvalue);
+}
+
+void change_01_out_set(number v) {
+    this->change_01_out = v;
+    this->numberobj_01_value_set(v);
+}
+
+void change_01_input_set(number v) {
+    this->change_01_input = v;
+
+    if (v != this->change_01_prev) {
+        number prev = this->change_01_prev;
+        this->change_01_prev = v;
+
+        if (v == 0) {
+            this->change_01_zero_set(1);
+        } else if (this->change_01_out == 0) {
+            this->change_01_nonzero_set(1);
+        }
+
+        {
+            this->change_01_out_set(v);
+        }
+    } else {
+        this->change_01_prev = v;
+    }
+}
+
+void numberobj_02_output_set(number v) {
+    this->change_01_input_set(v);
+}
+
+void numberobj_02_value_set(number v) {
+    this->numberobj_02_value_setter(v);
+    v = this->numberobj_02_value;
+    number localvalue = v;
+
+    if (this->numberobj_02_currentFormat != 6) {
+        localvalue = rnbo_trunc(localvalue);
+    }
+
+    this->getEngine()->sendNumMessage(TAG("valout"), TAG("number_obj-80"), localvalue, this->_currentTime);
+    this->numberobj_02_output_set(localvalue);
 }
 
 void expr_01_out1_set(number v) {
     this->expr_01_out1 = v;
-    this->numberobj_01_value_set(this->expr_01_out1);
+    this->numberobj_02_value_set(this->expr_01_out1);
 }
 
 void expr_01_in1_set(number in1) {
@@ -1244,77 +1446,54 @@ void dspexpr_07_in2_set(number v) {
     this->dspexpr_07_in2 = v;
 }
 
-void metro_01_on_set(number v) {
-    this->metro_01_on = v;
-    this->getEngine()->flushClockEvents(this, 1935387534, false);;
-
-    if ((bool)(v)) {
-        {
-            this->getEngine()->scheduleClockEvent(this, 1935387534, 0 + this->_currentTime);;
-        }
-    }
-}
-
-void toggle_02_output_set(number v) {
-    this->metro_01_on_set(v);
-}
-
-void toggle_02_value_number_set(number v) {
-    this->toggle_02_value_number_setter(v);
-    v = this->toggle_02_value_number;
-    this->getEngine()->sendNumMessage(TAG("valout"), TAG("toggle_obj-73"), v, this->_currentTime);
-    this->toggle_02_output_set(v);
-}
-
-void change_01_out_set(number v) {
-    this->change_01_out = v;
+void change_02_out_set(number v) {
+    this->change_02_out = v;
     this->select_02_input_number_set(v);
     this->dspexpr_07_in2_set(v);
-    this->toggle_02_value_number_set(v);
 }
 
-void change_01_input_set(number v) {
-    this->change_01_input = v;
+void change_02_input_set(number v) {
+    this->change_02_input = v;
 
-    if (v != this->change_01_prev) {
-        number prev = this->change_01_prev;
-        this->change_01_prev = v;
+    if (v != this->change_02_prev) {
+        number prev = this->change_02_prev;
+        this->change_02_prev = v;
 
         if (v == 0) {
-            this->change_01_zero_set(1);
-        } else if (this->change_01_out == 0) {
-            this->change_01_nonzero_set(1);
+            this->change_02_zero_set(1);
+        } else if (this->change_02_out == 0) {
+            this->change_02_nonzero_set(1);
         }
 
         {
-            this->change_01_out_set(v);
+            this->change_02_out_set(v);
         }
     } else {
-        this->change_01_prev = v;
+        this->change_02_prev = v;
     }
 }
 
-void numberobj_02_output_set(number v) {
-    this->change_01_input_set(v);
+void numberobj_03_output_set(number v) {
+    this->change_02_input_set(v);
 }
 
-void numberobj_02_value_set(number v) {
-    this->numberobj_02_value_setter(v);
-    v = this->numberobj_02_value;
+void numberobj_03_value_set(number v) {
+    this->numberobj_03_value_setter(v);
+    v = this->numberobj_03_value;
     number localvalue = v;
 
-    if (this->numberobj_02_currentFormat != 6) {
+    if (this->numberobj_03_currentFormat != 6) {
         localvalue = rnbo_trunc(localvalue);
     }
 
     this->getEngine()->sendNumMessage(TAG("valout"), TAG("number_obj-59"), localvalue, this->_currentTime);
-    this->numberobj_02_output_set(localvalue);
+    this->numberobj_03_output_set(localvalue);
 }
 
 void message_03_out_set(const list& v) {
     {
         number converted = (v->length > 0 ? v[0] : 0);
-        this->numberobj_02_value_set(converted);
+        this->numberobj_03_value_set(converted);
     }
 }
 
@@ -1435,23 +1614,27 @@ void inport_01_out_list_set(const list& v) {
     }
 }
 
-void snapshot_01_out_set(number v) {
-    this->snapshot_01_out = v;
-    this->expr_02_in1_set(v);
+void numberobj_04_output_set(number v) {
+    this->param_03_value_set(v);
 }
 
-void snapshot_01_input_bang_bang() {
-    this->snapshot_01_out_set(this->snapshot_01_lastValue);
-}
+void numberobj_04_value_set(number v) {
+    this->numberobj_04_value_setter(v);
+    v = this->numberobj_04_value;
+    number localvalue = v;
 
-void metro_01_tickout_bang() {
-    this->snapshot_01_input_bang_bang();
+    if (this->numberobj_04_currentFormat != 6) {
+        localvalue = rnbo_trunc(localvalue);
+    }
+
+    this->getEngine()->sendNumMessage(TAG("valout"), TAG("number_obj-104"), localvalue, this->_currentTime);
+    this->numberobj_04_output_set(localvalue);
 }
 
 void message_01_out_set(const list& v) {
     {
         number converted = (v->length > 0 ? v[0] : 0);
-        this->numberobj_02_value_set(converted);
+        this->numberobj_03_value_set(converted);
     }
 }
 
@@ -1724,7 +1907,7 @@ void line_02_perform(SampleValue * out, Index n) {
 
                 if ((bool)(!(bool)(this->line_02_activeRamps->length))) this->getEngine()->scheduleClockEventWithValue(
                     this,
-                    -4141894,
+                    1172582456,
                     this->sampsToMs((SampleIndex)(this->vs)) + this->_currentTime,
                     0
                 );;
@@ -1805,7 +1988,7 @@ void snapshot_01_perform(const SampleValue * input_signal, Index n) {
 
                 this->getEngine()->scheduleClockEventWithValue(
                     this,
-                    -1508480176,
+                    -1245190316,
                     this->sampsToMs((SampleIndex)(this->vs)) + this->_currentTime,
                     __snapshot_01_calc
                 );;
@@ -1846,14 +2029,6 @@ void numberobj_01_value_setter(number v) {
     this->numberobj_01_value = localvalue;
 }
 
-void toggle_02_value_number_setter(number v) {
-    this->toggle_02_value_number = (v != 0 ? 1 : 0);
-}
-
-void metro_01_interval_setter(number v) {
-    this->metro_01_interval = (v > 0 ? v : 0);
-}
-
 void numberobj_02_value_setter(number v) {
     number localvalue = v;
 
@@ -1862,6 +2037,26 @@ void numberobj_02_value_setter(number v) {
     }
 
     this->numberobj_02_value = localvalue;
+}
+
+void numberobj_03_value_setter(number v) {
+    number localvalue = v;
+
+    if (this->numberobj_03_currentFormat != 6) {
+        localvalue = rnbo_trunc(localvalue);
+    }
+
+    this->numberobj_03_value = localvalue;
+}
+
+void numberobj_04_value_setter(number v) {
+    number localvalue = v;
+
+    if (this->numberobj_04_currentFormat != 6) {
+        localvalue = rnbo_trunc(localvalue);
+    }
+
+    this->numberobj_04_value = localvalue;
 }
 
 number cycle_tilde_01_ph_next(number freq, number reset) {
@@ -1975,8 +2170,8 @@ void toggle_01_setPresetValue(PatcherStateInterface& preset) {
 }
 
 void numberobj_01_init() {
-    this->numberobj_01_currentFormat = 0;
-    this->getEngine()->sendNumMessage(TAG("setup"), TAG("number_obj-80"), 1, this->_currentTime);
+    this->numberobj_01_currentFormat = 6;
+    this->getEngine()->sendNumMessage(TAG("setup"), TAG("number_obj-95"), 1, this->_currentTime);
 }
 
 void numberobj_01_getPresetValue(PatcherStateInterface& preset) {
@@ -1990,20 +2185,36 @@ void numberobj_01_setPresetValue(PatcherStateInterface& preset) {
     this->numberobj_01_value_set(preset["value"]);
 }
 
-void toggle_02_getPresetValue(PatcherStateInterface& preset) {
-    preset["value"] = this->toggle_02_value_number;
+void change_01_init() {
+    this->change_01_prev = this->change_01_input;
 }
 
-void toggle_02_setPresetValue(PatcherStateInterface& preset) {
+void param_02_getPresetValue(PatcherStateInterface& preset) {
+    preset["value"] = this->param_02_value;
+}
+
+void param_02_setPresetValue(PatcherStateInterface& preset) {
     if ((bool)(stateIsEmpty(preset)))
         return;
 
-    this->toggle_02_value_number_set(preset["value"]);
+    this->param_02_value_set(preset["value"]);
 }
 
-void metro_01_onTransportChanged(number ) {}
+void numberobj_02_init() {
+    this->numberobj_02_currentFormat = 0;
+    this->getEngine()->sendNumMessage(TAG("setup"), TAG("number_obj-80"), 1, this->_currentTime);
+}
 
-void metro_01_onBeatTimeChanged(number ) {}
+void numberobj_02_getPresetValue(PatcherStateInterface& preset) {
+    preset["value"] = this->numberobj_02_value;
+}
+
+void numberobj_02_setPresetValue(PatcherStateInterface& preset) {
+    if ((bool)(stateIsEmpty(preset)))
+        return;
+
+    this->numberobj_02_value_set(preset["value"]);
+}
 
 void ip_01_init() {
     this->ip_01_lastValue = this->ip_01_value;
@@ -2055,31 +2266,58 @@ void phasor_01_dspsetup(bool force) {
     this->phasor_01_ph_dspsetup();
 }
 
-void numberobj_02_init() {
-    this->numberobj_02_currentFormat = 0;
+void numberobj_03_init() {
+    this->numberobj_03_currentFormat = 0;
     this->getEngine()->sendNumMessage(TAG("setup"), TAG("number_obj-59"), 1, this->_currentTime);
 }
 
-void numberobj_02_getPresetValue(PatcherStateInterface& preset) {
-    preset["value"] = this->numberobj_02_value;
+void numberobj_03_getPresetValue(PatcherStateInterface& preset) {
+    preset["value"] = this->numberobj_03_value;
 }
 
-void numberobj_02_setPresetValue(PatcherStateInterface& preset) {
+void numberobj_03_setPresetValue(PatcherStateInterface& preset) {
     if ((bool)(stateIsEmpty(preset)))
         return;
 
-    this->numberobj_02_value_set(preset["value"]);
+    this->numberobj_03_value_set(preset["value"]);
 }
 
 void message_01_init() {
     {
-        list __value = {0};
+        list __value = {1};
         this->message_01_input = jsCreateListCopy(__value);
     };
 }
 
-void change_01_init() {
-    this->change_01_prev = this->change_01_input;
+void numberobj_04_init() {
+    this->numberobj_04_currentFormat = 6;
+    this->getEngine()->sendNumMessage(TAG("setup"), TAG("number_obj-104"), 1, this->_currentTime);
+}
+
+void numberobj_04_getPresetValue(PatcherStateInterface& preset) {
+    preset["value"] = this->numberobj_04_value;
+}
+
+void numberobj_04_setPresetValue(PatcherStateInterface& preset) {
+    if ((bool)(stateIsEmpty(preset)))
+        return;
+
+    this->numberobj_04_value_set(preset["value"]);
+}
+
+void param_03_getPresetValue(PatcherStateInterface& preset) {
+    preset["value"] = this->param_03_value;
+}
+
+void param_03_setPresetValue(PatcherStateInterface& preset) {
+    if ((bool)(stateIsEmpty(preset)))
+        return;
+
+    this->param_03_value_set(preset["value"]);
+}
+
+void change_02_init() {
+    this->change_02_prev = this->change_02_input;
 }
 
 void message_02_init() {
@@ -2353,35 +2591,38 @@ void assign_defaults()
     param_01_value = -70;
     toggle_01_value_number = 0;
     toggle_01_value_number_setter(toggle_01_value_number);
-    line_02_time = 100;
+    line_02_time = 200;
+    numberobj_01_value = 0;
+    numberobj_01_value_setter(numberobj_01_value);
+    change_01_input = 0;
+    change_01_out = 0;
+    param_02_value = 0;
     expr_01_in1 = 0;
     expr_01_in2 = 1;
     expr_01_out1 = 0;
-    numberobj_01_value = 0;
-    numberobj_01_value_setter(numberobj_01_value);
+    numberobj_02_value = 0;
+    numberobj_02_value_setter(numberobj_02_value);
     expr_02_in1 = 0;
     expr_02_in2 = 60;
     expr_02_out1 = 0;
-    toggle_02_value_number = 0;
-    toggle_02_value_number_setter(toggle_02_value_number);
-    metro_01_on = 0;
-    metro_01_interval = 1000;
-    metro_01_interval_setter(metro_01_interval);
-    snapshot_01_interval = 0;
+    snapshot_01_interval = 250;
     snapshot_01_out = 0;
     dspexpr_07_in1 = 0;
     dspexpr_07_in2 = 0;
     ip_01_value = 0.016667;
     ip_01_impulse = 0;
     phasor_01_freq = 0;
-    numberobj_02_value = 0;
-    numberobj_02_value_setter(numberobj_02_value);
-    delay_01_time = 100;
+    numberobj_03_value = 0;
+    numberobj_03_value_setter(numberobj_03_value);
+    delay_01_time = 200;
     delay_01_delayall = 1;
     select_01_test1 = 0;
     select_01_test2 = 1;
-    change_01_input = 0;
-    change_01_out = 0;
+    numberobj_04_value = 0;
+    numberobj_04_value_setter(numberobj_04_value);
+    param_03_value = 0;
+    change_02_input = 0;
+    change_02_out = 0;
     select_02_test1 = 0;
     _currentTime = 0;
     audioProcessSampleCount = 0;
@@ -2412,7 +2653,9 @@ void assign_defaults()
     line_02_currentValue = 0;
     numberobj_01_currentFormat = 6;
     numberobj_01_lastValue = 0;
-    toggle_02_lastValue = 0;
+    param_02_lastValue = 0;
+    numberobj_02_currentFormat = 6;
+    numberobj_02_lastValue = 0;
     snapshot_01_calc = 0;
     snapshot_01_nextTime = 0;
     snapshot_01_count = 0;
@@ -2428,8 +2671,11 @@ void assign_defaults()
     phasor_01_ph_currentPhase = 0;
     phasor_01_ph_conv = 0;
     phasor_01_setupDone = false;
-    numberobj_02_currentFormat = 6;
-    numberobj_02_lastValue = 0;
+    numberobj_03_currentFormat = 6;
+    numberobj_03_lastValue = 0;
+    numberobj_04_currentFormat = 6;
+    numberobj_04_lastValue = 0;
+    param_03_lastValue = 0;
     globaltransport_tempo = nullptr;
     globaltransport_tempoNeedsReset = false;
     globaltransport_lastTempo = 120;
@@ -2481,16 +2727,17 @@ void assign_defaults()
     number toggle_01_value_number;
     list line_02_segments;
     number line_02_time;
+    number numberobj_01_value;
+    number change_01_input;
+    number change_01_out;
+    number param_02_value;
     number expr_01_in1;
     number expr_01_in2;
     number expr_01_out1;
-    number numberobj_01_value;
+    number numberobj_02_value;
     number expr_02_in1;
     number expr_02_in2;
     number expr_02_out1;
-    number toggle_02_value_number;
-    number metro_01_on;
-    number metro_01_interval;
     number snapshot_01_interval;
     number snapshot_01_out;
     number dspexpr_07_in1;
@@ -2498,14 +2745,16 @@ void assign_defaults()
     number ip_01_value;
     number ip_01_impulse;
     number phasor_01_freq;
-    number numberobj_02_value;
+    number numberobj_03_value;
     number delay_01_time;
     number delay_01_delayall;
     list message_01_input;
     number select_01_test1;
     number select_01_test2;
-    number change_01_input;
-    number change_01_out;
+    number numberobj_04_value;
+    number param_03_value;
+    number change_02_input;
+    number change_02_out;
     list message_02_input;
     number select_02_test1;
     list message_03_input;
@@ -2542,7 +2791,10 @@ void assign_defaults()
     number line_02_currentValue;
     Int numberobj_01_currentFormat;
     number numberobj_01_lastValue;
-    number toggle_02_lastValue;
+    number change_01_prev;
+    number param_02_lastValue;
+    Int numberobj_02_currentFormat;
+    number numberobj_02_lastValue;
     number snapshot_01_calc;
     number snapshot_01_nextTime;
     SampleIndex snapshot_01_count;
@@ -2558,9 +2810,12 @@ void assign_defaults()
     number phasor_01_ph_currentPhase;
     number phasor_01_ph_conv;
     bool phasor_01_setupDone;
-    Int numberobj_02_currentFormat;
-    number numberobj_02_lastValue;
-    number change_01_prev;
+    Int numberobj_03_currentFormat;
+    number numberobj_03_lastValue;
+    Int numberobj_04_currentFormat;
+    number numberobj_04_lastValue;
+    number param_03_lastValue;
+    number change_02_prev;
     signal globaltransport_tempo;
     bool globaltransport_tempoNeedsReset;
     number globaltransport_lastTempo;

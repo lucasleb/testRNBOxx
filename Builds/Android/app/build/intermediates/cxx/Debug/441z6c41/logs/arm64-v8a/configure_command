@@ -1,0 +1,27 @@
+/Users/lucaslebrun/Library/Android/sdk/cmake/3.18.1/bin/cmake \
+  -H/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app \
+  -DCMAKE_SYSTEM_NAME=Android \
+  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  -DCMAKE_SYSTEM_VERSION=16 \
+  -DANDROID_ABI=arm64-v8a \
+  -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a \
+  -DANDROID_NDK=/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620 \
+  -DCMAKE_ANDROID_NDK=/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620 \
+  -DCMAKE_TOOLCHAIN_FILE=/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake \
+  -DCMAKE_MAKE_PROGRAM=/Users/lucaslebrun/Library/Android/sdk/cmake/3.18.1/bin/ninja \
+  -DCMAKE_C_FLAGS=-O0 \
+  -DCMAKE_CXX_FLAGS=-O0 \
+  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a \
+  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a \
+  -DCMAKE_BUILD_TYPE=Debug \
+  -B/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a \
+  -GNinja \
+  -DANDROID_TOOLCHAIN=clang \
+  -DANDROID_PLATFORM=android-16 \
+  -DANDROID_STL=c++_static \
+  "-DANDROID_CPP_FEATURES=exceptions rtti" \
+  -DANDROID_ARM_MODE=arm \
+  -DANDROID_ARM_NEON=TRUE \
+  -DCMAKE_CXX_STANDARD=17 \
+  -DCMAKE_CXX_EXTENSIONS=OFF \
+  -DJUCE_BUILD_CONFIGURATION=DEBUG

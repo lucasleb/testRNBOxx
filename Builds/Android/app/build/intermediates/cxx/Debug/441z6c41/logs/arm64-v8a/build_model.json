@@ -1,0 +1,187 @@
+{
+  "abi": "ARM64_V8A",
+  "info": {
+    "abi": "ARM64_V8A",
+    "bitness": 64,
+    "deprecated": false,
+    "default": true
+  },
+  "cxxBuildFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a",
+  "soFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a",
+  "soRepublishFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cmake/debug_Debug/obj/arm64-v8a",
+  "abiPlatformVersion": 16,
+  "cmake": {
+    "effectiveConfiguration": {
+      "inheritEnvironments": [],
+      "variables": []
+    }
+  },
+  "variant": {
+    "buildSystemArgumentList": [
+      "-DANDROID_TOOLCHAIN\u003dclang",
+      "-DANDROID_PLATFORM\u003dandroid-16",
+      "-DANDROID_STL\u003dc++_static",
+      "-DANDROID_CPP_FEATURES\u003dexceptions rtti",
+      "-DANDROID_ARM_MODE\u003darm",
+      "-DANDROID_ARM_NEON\u003dTRUE",
+      "-DCMAKE_CXX_STANDARD\u003d17",
+      "-DCMAKE_CXX_EXTENSIONS\u003dOFF",
+      "-DJUCE_BUILD_CONFIGURATION\u003dDEBUG"
+    ],
+    "cFlagsList": [
+      "-O0"
+    ],
+    "cppFlagsList": [
+      "-O0"
+    ],
+    "variantName": "debug_Debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARM64_V8A"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "module": {
+      "cxxFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx",
+      "intermediatesBaseFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates",
+      "intermediatesFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cxx",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app",
+      "moduleBuildFile": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build.gradle",
+      "makeFile": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "ndkFolder": "/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620",
+      "ndkVersion": "23.1.7779620",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "LIBCXX_STATIC",
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 31,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30,
+          "S": 31
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "cmakeToolchainFile": "/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake",
+      "cmake": {
+        "isValidCmakeAvailable": true,
+        "cmakeExe": "/Users/lucaslebrun/Library/Android/sdk/cmake/3.18.1/bin/cmake",
+        "minimumCmakeVersion": "3.18.1"
+      },
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "ARM64_V8A": "/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "X86": "/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "X86_64": "/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android",
+        "sdkFolder": "/Users/lucaslebrun/Library/Android/sdk",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false
+      },
+      "outputOptions": [],
+      "ninjaExe": "/Users/lucaslebrun/Library/Android/sdk/cmake/3.18.1/bin/ninja"
+    },
+    "prefabClassPaths": [],
+    "prefabPackages": [],
+    "prefabPackageConfigurations": [],
+    "stlType": "c++_static",
+    "optimizationTag": "Debug"
+  },
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "prefabFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/prefab/arm64-v8a",
+  "isActiveAbi": true,
+  "fullConfigurationHash": "441z6c41n3s574s606qy1n254h3c5bl4e2e5y4e5i3l1q4s3s631g1y3l3h46",
+  "configurationArguments": [
+    "-H/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app",
+    "-DCMAKE_SYSTEM_NAME\u003dAndroid",
+    "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
+    "-DCMAKE_SYSTEM_VERSION\u003d16",
+    "-DANDROID_ABI\u003darm64-v8a",
+    "-DCMAKE_ANDROID_ARCH_ABI\u003darm64-v8a",
+    "-DANDROID_NDK\u003d/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620",
+    "-DCMAKE_ANDROID_NDK\u003d/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620",
+    "-DCMAKE_TOOLCHAIN_FILE\u003d/Users/lucaslebrun/Library/Android/sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake",
+    "-DCMAKE_MAKE_PROGRAM\u003d/Users/lucaslebrun/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+    "-DCMAKE_C_FLAGS\u003d-O0",
+    "-DCMAKE_CXX_FLAGS\u003d-O0",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a",
+    "-DCMAKE_BUILD_TYPE\u003dDebug",
+    "-B/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a",
+    "-GNinja",
+    "-DANDROID_TOOLCHAIN\u003dclang",
+    "-DANDROID_PLATFORM\u003dandroid-16",
+    "-DANDROID_STL\u003dc++_static",
+    "-DANDROID_CPP_FEATURES\u003dexceptions rtti",
+    "-DANDROID_ARM_MODE\u003darm",
+    "-DANDROID_ARM_NEON\u003dTRUE",
+    "-DCMAKE_CXX_STANDARD\u003d17",
+    "-DCMAKE_CXX_EXTENSIONS\u003dOFF",
+    "-DJUCE_BUILD_CONFIGURATION\u003dDEBUG"
+  ],
+  "intermediatesParentFolder": "/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/cxx/Debug/441z6c41"
+}

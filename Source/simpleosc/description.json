@@ -26,9 +26,63 @@
       "ioType": "IOTypeUndefined",
       "serialId": "param_s02",
       "constrainFunc": "param_01_value_constrain"
+    },
+    {
+      "type": "ParameterTypeNumber",
+      "index": 1,
+      "name": "time",
+      "paramId": "time",
+      "minimum": 0,
+      "maximum": 10000000000,
+      "exponent": 1,
+      "steps": 0,
+      "initialValue": 0,
+      "isEnum": false,
+      "enumValues": [],
+      "displayName": "",
+      "unit": "",
+      "order": 0,
+      "displayorder": "-",
+      "sendinit": true,
+      "initialized": true,
+      "debug": false,
+      "saveable": true,
+      "transmittable": true,
+      "visible": true,
+      "signalIndex": null,
+      "ioType": "IOTypeUndefined",
+      "serialId": "param_s21",
+      "constrainFunc": "param_02_value_constrain"
+    },
+    {
+      "type": "ParameterTypeNumber",
+      "index": 2,
+      "name": "relativeTime",
+      "paramId": "relativeTime",
+      "minimum": 0,
+      "maximum": 1,
+      "exponent": 1,
+      "steps": 0,
+      "initialValue": 0,
+      "isEnum": false,
+      "enumValues": [],
+      "displayName": "",
+      "unit": "",
+      "order": 0,
+      "displayorder": "-",
+      "sendinit": true,
+      "initialized": true,
+      "debug": false,
+      "saveable": true,
+      "transmittable": true,
+      "visible": true,
+      "signalIndex": null,
+      "ioType": "IOTypeUndefined",
+      "serialId": "param_s24",
+      "constrainFunc": "param_03_value_constrain"
     }
   ],
-  "numParameters": 1,
+  "numParameters": 3,
   "numSignalInParameters": 0,
   "numSignalOutParameters": 0,
   "numInputChannels": 2,
@@ -43,12 +97,7 @@
       "meta": ""
     }
   ],
-  "outports": [
-    {
-      "tag": "time",
-      "meta": ""
-    }
-  ],
+  "outports": [],
   "inlets": [
     {
       "type": "signal",

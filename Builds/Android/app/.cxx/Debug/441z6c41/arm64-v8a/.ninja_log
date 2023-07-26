@@ -164,3 +164,8 @@
 17	3908	1690364762	CMakeFiles/juce_jni.dir/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Source/Main.cpp.o	e7b57868b718bee9
 18	3952	1690364762	CMakeFiles/juce_jni.dir/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Source/MainComponent.cpp.o	6455ff62fe8b027c
 3952	4956	1690364763	../../../../build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a/libjuce_jni.so	54bbf00650cf76d
+17	6987	1690380242	CMakeFiles/juce_jni.dir/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Source/simpleosc/rnbo_source.cpp.o	175e68d1c2e1f136
+19	9832	1690380245	CMakeFiles/juce_jni.dir/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Source/Main.cpp.o	e7b57868b718bee9
+19	9986	1690380245	CMakeFiles/juce_jni.dir/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Source/MainComponent.cpp.o	6455ff62fe8b027c
+19	11700	1690380246	CMakeFiles/juce_jni.dir/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Source/simpleosc/rnbo/RNBO.cpp.o	ef38ac3337e0646c
+11701	15646	1690380250	../../../../build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a/libjuce_jni.so	54bbf00650cf76d

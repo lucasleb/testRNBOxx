@@ -1,0 +1,117 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:1-24:12
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:1-24:12
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:1-24:12
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:1-24:12
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:1-24:12
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:1-24:12
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:1-24:12
+	package
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:1-24:12
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:94-121
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:11-69
+	android:versionCode
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:3:70-93
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+supports-screens
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:3-5:51
+	android:largeScreens
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:78-105
+	android:smallScreens
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:21-48
+	android:normalScreens
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:49-77
+	android:xlargeScreens
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:5:21-49
+	android:anyDensity
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:4:106-131
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:6:3-105
+	android:maxSdkVersion
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:6:77-103
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:6:20-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:7:3-104
+	android:maxSdkVersion
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:7:76-102
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:7:20-75
+uses-permission#android.permission.READ_MEDIA_VIDEO
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:8:3-72
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:8:20-70
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:9:3-73
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:9:20-71
+uses-permission#android.permission.READ_MEDIA_AUDIO
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:10:3-72
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:10:20-70
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:11:3-68
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:11:20-66
+uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:12:3-83
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:12:20-81
+uses-permission#android.permission.INTERNET
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:13:3-64
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:13:20-62
+application
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:14:3-23:17
+	android:label
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:14:16-48
+	android:hardwareAccelerated
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:14:86-121
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:14:49-85
+activity#com.rmsl.juce.JuceActivity
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:15:5-22:16
+	android:screenOrientation
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:16:15-54
+	android:launchMode
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:16:55-86
+	android:hardwareAccelerated
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:16:87-121
+	android:exported
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:17:15-38
+	android:configChanges
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:15:57-138
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:15:15-56
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:18:7-21:23
+action#android.intent.action.MAIN
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:19:9-60
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:19:17-58
+category#android.intent.category.LAUNCHER
+ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:20:9-68
+	android:name
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml:20:19-66
+uses-sdk
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/src/main/AndroidManifest.xml

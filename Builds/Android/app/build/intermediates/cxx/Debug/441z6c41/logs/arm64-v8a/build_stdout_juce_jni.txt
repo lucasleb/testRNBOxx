@@ -1,4 +1,0 @@
-ninja: Entering directory `/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/.cxx/Debug/441z6c41/arm64-v8a'
-[1/3] Building CXX object CMakeFiles/juce_jni.dir/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Source/Main.cpp.o
-[2/3] Building CXX object CMakeFiles/juce_jni.dir/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Source/MainComponent.cpp.o
-[3/3] Linking CXX shared library ../../../../build/intermediates/cxx/Debug/441z6c41/obj/arm64-v8a/libjuce_jni.so

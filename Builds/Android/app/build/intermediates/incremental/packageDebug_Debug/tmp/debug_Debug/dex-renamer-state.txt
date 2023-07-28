@@ -1,4 +1,0 @@
-#Wed Jul 26 16:04:12 CEST 2023
-base.0=/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/build/intermediates/dex/debug_Debug/mergeDexDebug_Debug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

@@ -1,2 +1,0 @@
-/Applications/JUCE/modules/juce_audio_devices/native/oboe/CMakeLists.txt
-/Users/lucaslebrun/Development/JUCE/Projects/testRNBOxx/Builds/Android/app/CMakeLists.txt
